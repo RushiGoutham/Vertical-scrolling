@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.js"
+      integrity="sha512-8Yom5spEjD3HeZTNoDiOm4Y4Rn3RVKUFpiqTM4I3RIIO0u8e2m7XjT5rG1GQNHJlVcD9EZrzn+itENl4C6112A=="
+      crossorigin="anonymous"
+      
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.js"
+      integrity="sha512-u+vtyZDzyd0zgAEffKfoNx2BnCahAOBBYvzGu6vma1B18zQ6lEGF3F6dAFvqaxDoIU/GZRxcXV5oq23OIrkQwg=="
+      crossorigin="anonymous"
+    ></script>
+    <title>Interactive scrolling</title>
+    <style>
+      body {
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+      }
+     
+      .navTop {
+        margin-top: 15%;
+        margin-right: 5%;
+
+      }
+      #block {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        background: #f00;
+        z-index: 100;
+      }
+      #container {
+        width: 120vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        pointer-events: none;
+      }
+      ul {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        border: 1px solid #000;
+        width: 200px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        font-size: 20px;
+        border: 1px solid #000;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <ul class="nav navTop">
+      <li data-nav="0">Tom & Jerry</li>
+      <li data-nav="1">Mountains</li>
+      <li data-nav="2">Plants</li>
+      <li data-nav="3">Eiffel Tower</li>
+      <li data-nav="4">Evolution</li>
+    </ul>
+    <div id="wrap">
+      <div class="n">
+        <img src="./img/0.jpg" width="70" height="30" alt="" />
+      </div>
+      <div class="n"><img src="img/1.jpg" width="60" alt="" /></div>
+      <div class="n"><img src="img/2.jpg" width="60" alt="" /></div>
+      <div class="n"><img src="img/3.jpg" width="60" alt="" /></div>
+      <div class="n"><img src="img/4.jpg" width="60" alt="" /></div>
+    </div>
+    <div id="container"></div>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
